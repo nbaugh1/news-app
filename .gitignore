@@ -20,3 +20,13 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore local database.yml
+/config/database.yml
+
+# Ignore TODO
+TODO.mdx
+
+# Ignore public, place files for /public in /client/public
+
+/public
