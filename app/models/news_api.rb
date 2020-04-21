@@ -7,10 +7,13 @@ class NewsApi
 
 # /v2/top-headlines
     def self.top_headlines
-        url = "#{API_HOST}top-headines"
+        url = "#{API_HOST}top-headlines"
         params = { 
+                apiKey: "f59463c6813c403bb187dbb78fc92e2c",
+                language: "en"
             }
-            response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
+        response = HTTP.auth("f59463c6813c403bb187dbb78fc92e2c").get(url, params: params)
+        response.parse["articles"]
     end
 
 # /v2/everything
