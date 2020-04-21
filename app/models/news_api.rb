@@ -9,7 +9,6 @@ class NewsApi
     def self.top_headlines
         url = "#{API_HOST}top-headlines"
         params = { 
-                apiKey: "f59463c6813c403bb187dbb78fc92e2c",
                 language: "en"
             }
         response = HTTP.auth("f59463c6813c403bb187dbb78fc92e2c").get(url, params: params)
@@ -18,18 +17,21 @@ class NewsApi
 
 # /v2/everything
         def self.all_articles
-            all_articles = newsapi.get_everything(q: 'bitcoin',
-                sources: 'bbc-news,the-verge',
-                domains: 'bbc.co.uk,techcrunch.com',
-                from: '2017-12-01',
-                to: '2017-12-12',
-                language: 'en',
-                sortBy: 'relevancy',
-                page: 2)
+            url = "#{API_HOST}everything"
+            params = { 
+                language: "en"
+            }
+            response = HTTP.auth("f59463c6813c403bb187dbb78fc92e2c").get(url, params: params)
+            response.parse["articles"]
         end
 
 # /v2/sources
         def self.sources
-            sources = newsapi.get_sources(country: 'us', language: 'en')
+            url = "#{API_HOST}sources"
+            params = { 
+                language: "en"
+            }
+        response = HTTP.auth("f59463c6813c403bb187dbb78fc92e2c").get(url, params: params)
+        response.parse["sources"]
         end
 end
