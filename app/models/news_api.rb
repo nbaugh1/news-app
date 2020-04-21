@@ -16,13 +16,14 @@ class NewsApi
     end
 
 # /v2/everything
-        def self.all_articles
+        def self.everything
             url = "#{API_HOST}everything"
             params = { 
-                language: "en"
+                language: "en",
+                sources: "abc-news",
             }
             response = HTTP.auth("f59463c6813c403bb187dbb78fc92e2c").get(url, params: params)
-            response.parse["articles"]
+            # response.parse["articles"]
         end
 
 # /v2/sources
