@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   resources :sources
   resources :categories
   resources :users
