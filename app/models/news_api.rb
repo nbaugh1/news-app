@@ -9,13 +9,8 @@ class NewsApi
     def self.top_headlines
         url = "#{API_HOST}top-headines"
         params = { 
-            q: 'bitcoin', 
-            sources: 'bbc-news,the-verge',
-            category: 'business',
-            language: 'en',
-            country: 'us'}
+            }
             response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
-            response.parse["headlines"]
     end
 
 # /v2/everything
