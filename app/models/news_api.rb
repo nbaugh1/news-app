@@ -16,23 +16,23 @@ class NewsApi
     end
 
 # /v2/everything
-        def self.everything
-            url = "#{API_HOST}everything"
-            params = { 
-                language: "en",
-                sources: "abc-news",
-            }
-            response = HTTP.auth("f59463c6813c403bb187dbb78fc92e2c").get(url, params: params)
+    def self.everything
+        url = "#{API_HOST}everything"
+        params = { 
+            language: "en",
+            sources: "abc-news",
+        }
+        response = HTTP.auth("f59463c6813c403bb187dbb78fc92e2c").get(url, params: params)
             # response.parse["articles"]
-        end
+    end
 
 # /v2/sources
-        def self.sources
-            url = "#{API_HOST}sources"
-            params = { 
-                language: "en"
-            }
+    def self.sources
+        url = "#{API_HOST}sources"
+        params = { 
+            language: "en"
+        }
         response = HTTP.auth("f59463c6813c403bb187dbb78fc92e2c").get(url, params: params)
         response.parse["sources"]
-        end
+    end
 end

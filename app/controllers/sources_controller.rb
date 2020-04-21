@@ -3,7 +3,7 @@ class SourcesController < ApplicationController
 
   # GET /sources
   def index
-    @sources = Source.all
+    @sources = NewsApi.sources
 
     render json: @sources
   end
